@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><TargetFramework>net9.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><AssemblyName>OperationBlackMarketItems</AssemblyName><SptRoot Condition="'$(SptRoot)' == ''">C:\SPT\SPT</SptRoot></PropertyGroup>
+ <ItemGroup>
+  <Reference Include="SPTarkov.Server.Core"><HintPath>$(SptRoot)\SPTarkov.Server.Core.dll</HintPath><Private>false</Private></Reference>
+  <Reference Include="SPTarkov.Common"><HintPath>$(SptRoot)\SPTarkov.Common.dll</HintPath><Private>false</Private></Reference>
+  <Reference Include="SPTarkov.DI"><HintPath>$(SptRoot)\SPTarkov.DI.dll</HintPath><Private>false</Private></Reference>
+  <Reference Include="SemanticVersioning"><HintPath>$(SptRoot)\SemanticVersioning.dll</HintPath><Private>false</Private></Reference>
+  <Reference Include="WTT-ServerCommonLib"><HintPath>$(SptRoot)\user\mods\WTT-ServerCommonLib\WTT-ServerCommonLib.dll</HintPath><Private>false</Private></Reference>
+ </ItemGroup>
+</Project>

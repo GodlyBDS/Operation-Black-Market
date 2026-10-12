@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>OBMTheCompound.Client</AssemblyName>
+    <LangVersion>9.0</LangVersion>
+    <Version>0.1.0</Version>
+    <GameRoot Condition="'$(GameRoot)' == ''">C:\SPT</GameRoot>
+    <Managed>$(GameRoot)\EscapeFromTarkov_Data\Managed</Managed>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(Managed)\netstandard.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\mscorlib.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\System.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\System.Core.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\Assembly-CSharp.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\Comfort.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\UnityEngine.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\UnityEngine.CoreModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\UnityEngine.PhysicsModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\UnityEngine.AudioModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\UnityEngine.InputLegacyModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\UnityEngine.TerrainModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)\DissonanceVoip.dll"><Private>false</Private></Reference>
+    <Reference Include="$(GameRoot)\BepInEx\core\BepInEx.dll"><Private>false</Private></Reference>
+    <Reference Include="$(GameRoot)\BepInEx\core\0Harmony.dll"><Private>false</Private></Reference>
+    <Reference Include="$(GameRoot)\BepInEx\plugins\spt\spt-reflection.dll"><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

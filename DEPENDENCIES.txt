@@ -1,0 +1,40 @@
+Dependencies
+============
+
+Targets SPT 4.0.13. Versions below describe the locally used setup.
+Compatibility with other SPT versions has not been established.
+
+
+Operation Black Market Items
+----------------------------
+
+Required
+  - SPT 4.0.13
+  - WTT-ServerCommonLib 2.0.22 or newer (server)  - tested with 2.0.23
+  - WTT-ClientCommonLib (client)                   - tested with 2.0.23
+
+
+OBM The Compound (map)
+----------------------
+
+Required
+  - SPT 4.0.13
+  - DrakiaXYZ-Waypoints (client)                   - tested with 1.8.2
+      loads the map's navmesh, without it bots can't move on the map
+  - DrakiaXYZ-BigBrain (client, needed by Waypoints) - tested with 1.4.0
+  - tarkin-ladders (client)                        - tested with 1.0.2
+      the map's ladders
+
+Optional (supported)
+  - acidphantasm-botplacementsystem (ABPS)         - tested with 2.0.0
+      The Compound uses the ABPS Streets settings, see config.json
+  - acidphantasm-progressivebotsystem (APBS)       - tested with 2.0.0
+      map profile for bot gear set in config.json (apbsMapProfile)
+  - SAIN                                           - tested with 4.4.3
+      better bot behaviour, recommended
+  - Fika                                           - tested with 2.3.9
+  - DynamicMaps                                    - tested with 1.0.5
+      in-raid map, needs the OBM_TheCompound map folder in
+      BepInEx/plugins/DynamicMaps/Maps
+
+Both mods work without each other.

@@ -1,0 +1,38 @@
+# Build outputs and IDE state
+**/bin/
+**/obj/
+.vs/
+.idea/
+*.user
+*.suo
+*.log
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Runtime binaries and proprietary game assets are supplied locally
+*.dll
+*.exe
+*.pdb
+*.bundle
+*.assets
+*.resource
+*.wem
+*.wav
+*.ogg
+*.mp3
+*.fbx
+*.glb
+*.gltf
+*.dds
+**/bundles/
+**/EscapeFromTarkov_Data/
+**/SPT_Data/
+**/Library/
+**/Temp/
+**/Backups/
+**/BuildOutput/
