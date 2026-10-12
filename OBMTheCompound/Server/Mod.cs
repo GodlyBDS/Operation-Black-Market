@@ -29,7 +29,7 @@ public record Metadata : AbstractModMetadata
     public override Dictionary<string, SemanticVersioning.Range>? ModDependencies { get; init; }
     public override string? Url { get; init; }
     public override bool? IsBundleMod { get; init; } = false; // bundles are loaded from StreamingAssets
-    public override string License { get; init; } = "Private local use";
+    public override string License { get; init; } = "MIT";
 }
 
 // Turns the unused Terminal location into The Compound.

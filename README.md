@@ -32,4 +32,8 @@ Collection weapon preset and Compound key generation belong to the local data pa
 
 ## Credits
 
-Project by Godly, developed with assistance from Claude and OpenAI Codex. Server/client integration uses SPT, BepInEx, Harmony and WTT CommonLib; map navigation integrates with the dependencies listed in DEPENDENCIES.txt. Third-party game content remains the property of its respective owners and is not included here. Existing mod metadata retains its current license designation; no additional code license is granted by this source snapshot.
+Project by Godly, developed with assistance from Claude and OpenAI Codex. Server/client integration uses SPT, BepInEx, Harmony and WTT CommonLib; map navigation integrates with the dependencies listed in DEPENDENCIES.txt. Third-party game content remains the property of its respective owners and is not included here.
+
+## License
+
+The source code in this repository is available under the [MIT License](LICENSE), as selected by GodlyBDS. Third-party libraries and game assets retain their respective licenses and ownership.

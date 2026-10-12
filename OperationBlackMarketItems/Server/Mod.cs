@@ -21,7 +21,7 @@ public record Metadata : AbstractModMetadata
     { ["com.wtt.commonlib"] = new("^2.0.22") };
     public override string? Url { get; init; }
     public override bool? IsBundleMod { get; init; } = true;
-    public override string License { get; init; } = "Private local use";
+    public override string License { get; init; } = "MIT";
 }
 
 [Injectable(InjectionType.Scoped, null, int.MaxValue, TypePriority = 400002)]
