@@ -1,39 +1,58 @@
-# Operation Black Market — Source
+# Operation Black Market
 
-Two SPT 4.0 mods, each with a server part (.NET 9) and a BepInEx client plugin (netstandard2.1).
+Operation Black Market brings Rainbow Six Siege's maps, weapons and operators into SPT. Familiar buildings become places to raid, operator equipment turns up in the black market, and Rainbow's arsenal finds its way into Tarkov through Kali.
 
-- `OBMTheCompound` – The Compound map (location Terminal): server data/patches, client plugin for lighting, sounds, destruction and bot respawns.
-- `OperationBlackMarketItems` – Rainbow Six Siege weapons, skins, charms, Kali trader, the Ash outfit and voice, and custom key definitions supplied through its runtime database. Needs WTT-ServerCommonLib.
+The setting is **The Compound**, an abandoned Rainbow training facility near Norvinsk. The operators left when the region fell apart. Their training grounds and equipment stayed behind.
 
-See DEPENDENCIES.txt for the required and optional mods.
+## The Compound
 
-## Scope
+House and Hereford share one raid map, with more Siege locations planned as the facility grows. You can move between training buildings, search for supplies and fight through spaces originally built for counter-terrorism exercises.
 
-This repository contains the authored C# plugin source and project files. It is not a ready-to-install mod package or the Unity map/weapon authoring project. Game assemblies, extracted Siege/Tarkov assets, audio, compiled asset bundles, profiles and credentials are not included.
+The map has its own loot containers, extraction points, bot spawns and locked rooms. The client plugin handles map lighting, sound, destruction and bot respawns, while the server connects the exported map data to SPT.
 
-Build references resolve against your local SPT/Escape from Tarkov installation. The map server additionally needs its exported `data/location.json`, configuration and optional `MapInfo` slides. The Items server needs its matching custom-item/clothing/voice definitions, Kali data, bundle manifest and privately supplied bundles. Compiling these projects produces DLLs; it does not recreate those runtime data or assets. Keep the corresponding local package when using a newly compiled DLL.
+## The arsenal
 
-The source targets **SPT 4.0.13**. Compilation or compatibility with SPT 4.1 and later is not claimed.
+The Items mod adds Rainbow weapons such as the R4-C, 416-C Carbine, F2 and Scorpion EVO, along with their skins, magazines, attachments and charms. They use Tarkov's weapon systems, with Siege firing and reload audio.
 
-## Build
+Kali runs the trader. Ash's outfit and voice are also included in the local mod package, alongside custom keys for the Compound's locked rooms.
 
-Set the path to your SPT install when building:
+## Development
 
-    dotnet build OBMTheCompound/Server/OBMTheCompound.csproj -c Release -p:SptRoot="C:\SPT\SPT"
-    dotnet build OBMTheCompound/Client/OBMTheCompound.Client.csproj -c Release -p:GameRoot="C:\SPT"
-    dotnet build OperationBlackMarketItems/Server/OperationBlackMarketItems.csproj -c Release -p:SptRoot="C:\SPT\SPT"
-    dotnet build OperationBlackMarketItems/Client/R6PortClient.csproj -c Release -p:EftRoot="C:\SPT"
+This is a work in progress. The longer-term plan is a quest line connecting Prapor, Kali and the abandoned facility, with Rainbow equipment and weapons unlocked through progression. That quest line is still being developed.
 
-## Recent corrections
+This repository contains the C# sources for two mods:
 
-The Compound's static container loot merge includes all native maps while preserving the existing shared-pool precedence. This covers Labyrinth-only crate types. A startup preflight reports missing placed-container or clone donor mappings before raid generation.
+| Project | Purpose |
+| --- | --- |
+| `OBMTheCompound` | The map's server integration and BepInEx client plugin |
+| `OperationBlackMarketItems` | Weapons, Kali, Ash and item support |
 
-Collection weapon preset and Compound key generation belong to the local data packaging pipeline, which is not included in this C# source snapshot. The matching runtime package contains distinct collection presets and the House Walk-in Closet Key definition.
+Both target **SPT 4.0.13**, with .NET 9 server projects and netstandard2.1 client plugins. See [DEPENDENCIES.txt](DEPENDENCIES.txt) for the required and optional mods.
+
+## Building from source
+
+You need a local SPT installation and the dependencies listed above. Set its path when building:
+
+```powershell
+dotnet build OBMTheCompound/Server/OBMTheCompound.csproj -c Release -p:SptRoot="C:\SPT\SPT"
+dotnet build OBMTheCompound/Client/OBMTheCompound.Client.csproj -c Release -p:GameRoot="C:\SPT"
+dotnet build OperationBlackMarketItems/Server/OperationBlackMarketItems.csproj -c Release -p:SptRoot="C:\SPT\SPT"
+dotnet build OperationBlackMarketItems/Client/R6PortClient.csproj -c Release -p:EftRoot="C:\SPT"
+```
+
+The build produces the server and client DLLs. Running them also requires the matching local mod data:
+
+- **The Compound:** exported `data/location.json`, map bundles, configuration and `MapInfo` files.
+- **Items:** item, clothing and voice definitions, Kali's trader data, bundle manifest and asset bundles.
+
+The Unity projects, game assemblies, extracted models, textures, audio and compiled asset bundles are not stored in this repository. The data-generation tools are also outside this source snapshot, so these projects alone do not produce a complete installable package. Compatibility with SPT 4.1 or later has not been established.
 
 ## Credits
 
-Project by Godly, developed with assistance from Claude and OpenAI Codex. Server/client integration uses SPT, BepInEx, Harmony and WTT CommonLib; map navigation integrates with the dependencies listed in DEPENDENCIES.txt. Third-party game content remains the property of its respective owners and is not included here.
+Created by **GodlyBDS**. Built on SPT, BepInEx, Harmony and WTT CommonLib, with the map integrations listed in the dependencies file. Development assistance from Claude and OpenAI Codex.
+
+Rainbow Six Siege and Escape from Tarkov belong to their respective owners. This is an unofficial fan project.
 
 ## License
 
-The source code in this repository is available under the [MIT License](LICENSE), as selected by GodlyBDS. Third-party libraries and game assets retain their respective licenses and ownership.
+Source code is available under the [MIT License](LICENSE). Third-party libraries and game assets retain their own licenses.
