@@ -8,7 +8,7 @@ The setting is **The Compound**, an abandoned Rainbow training facility near Nor
 
 House and Hereford share one raid map, with more Siege locations planned as the facility grows. You can move between training buildings, search for supplies and fight through spaces originally built for counter-terrorism exercises.
 
-The map has its own loot containers, extraction points, bot spawns and locked rooms. The client plugin handles map lighting, sound, destruction and bot respawns, while the server connects the exported map data to SPT.
+The map has its own loot containers, extraction points and bot spawns, with support for custom keys and locked rooms. The client plugin handles map lighting, sound, destruction and bot respawns, while the server connects the exported map data to SPT.
 
 ## The arsenal
 
